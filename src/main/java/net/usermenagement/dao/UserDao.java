@@ -136,15 +136,11 @@ public class UserDao {
 		}
 		
 		
-		public boolean deleteUser(User user) throws SQLException {
+		public boolean deleteUser(int id) throws SQLException {
 			boolean rowDeleted = false;
 			try(Connection connection = getConnection()){ 
-				
 				PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USERS_SQL);
-				preparedStatement.setString(1, user.getName());
-				preparedStatement.setString(2, user.getEmail());
-				preparedStatement.setString(3, user.getCountry());
-				preparedStatement.setInt(4, user.getId());
+				preparedStatement.setInt(1, id);
 				
 				rowDeleted = preparedStatement.executeUpdate() > 0;
 				
