@@ -1,7 +1,5 @@
 package net.usermenagement.model;
 
-import org.eclipse.jdt.internal.compiler.IDebugRequestor;
-
 public class User {
 
 	
